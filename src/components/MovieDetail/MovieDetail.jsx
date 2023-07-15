@@ -49,7 +49,7 @@ export default function MovieDetail() {
             </div>
 
             <div className="text">
-              <h1>{movie?.title}</h1>
+              <h1 className="title">{movie?.title}</h1>
               <span>{`${Math.floor(movie?.runtime / 60)} hr ${
                 movie?.runtime % 60
               } min`}</span>

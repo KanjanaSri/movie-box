@@ -19,14 +19,14 @@ export default function Home() {
       {!isLoading && !error && (
         <PosterSlider movies={nowPlayingMovies}>
           <div>
-            <span class="underline">Now Playing</span>
+            <span className="underline">Now Playing</span>
           </div>
         </PosterSlider>
       )}
       {!isLoading && !error && (
         <PosterSlider movies={upcomingMovies}>
           <div>
-            <span class="underline">Upcoming Movies</span>
+            <span className="underline">Upcoming Movies</span>
           </div>
         </PosterSlider>
       )}

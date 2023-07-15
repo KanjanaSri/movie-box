@@ -1,7 +1,7 @@
 import React from "react";
-import MovieList from "../MovieList/MovieList";
 import { useContext } from "react";
 import { SaveListContext } from "../../context/SaveListContext";
+import MovieCard from "../MovieCard/MovieCard";
 import "./SaveList.css";
 
 export default function SaveList() {
@@ -11,11 +11,15 @@ export default function SaveList() {
 
   return (
     <div className="cards-container">
-      <MovieList
-        saveMovies={saveList}
-        onRemoveMovie={handleRemoveMovie}
-        showRemove={true}
-      />
+      {saveList?.map((movie) => (
+        <MovieCard
+          movie={movie}
+          key={crypto.randomUUID()}
+          saveMovies={saveList}
+          onRemoveMovie={handleRemoveMovie}
+          showRemove={true}
+        />
+      ))}
     </div>
   );
 }
