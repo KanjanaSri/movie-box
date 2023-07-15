@@ -2,21 +2,17 @@ import React from "react";
 import MovieList from "../MovieList/MovieList";
 import { useContext } from "react";
 import { SaveListContext } from "../../context/SaveListContext";
+import "./SaveList.css";
 
-export default function SavedList() {
+export default function SaveList() {
   const { saveList, handleRemoveMovie } = useContext(SaveListContext);
-  const emptyListStyle = {
-    display: "flex",
-    minHeight: "80vh",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-  if (!saveList?.length) return <h1 style={emptyListStyle}>List is empty</h1>;
+
+  if (!saveList?.length) return <h1 className="empty">List is empty</h1>;
 
   return (
-    <div>
+    <div className="cards-container">
       <MovieList
-        movies={saveList}
+        saveMovies={saveList}
         onRemoveMovie={handleRemoveMovie}
         showRemove={true}
       />

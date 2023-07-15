@@ -6,15 +6,18 @@ import "./index.css";
 
 import MoviesProvider from "./context/MoviesContext.jsx";
 import SaveListProvider from "./context/SaveListContext.jsx";
+import SearchProvider from "./context/SearchContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <MoviesProvider>
-    <SaveListProvider>
-      <React.StrictMode>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </React.StrictMode>
-    </SaveListProvider>
-  </MoviesProvider>
+  <BrowserRouter>
+    <MoviesProvider>
+      <SaveListProvider>
+        <SearchProvider>
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </SearchProvider>
+      </SaveListProvider>
+    </MoviesProvider>
+  </BrowserRouter>
 );

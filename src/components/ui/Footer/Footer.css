@@ -7,8 +7,12 @@
 }
 
 .logo img {
-  width: 6rem;
+  width: 4rem;
   margin-left: 3rem;
+}
+
+.copy {
+  font-size: 0.8rem;
 }
 
 .social {

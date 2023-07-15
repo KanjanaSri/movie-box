@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import SearchForm from "../SearchForm/SearchForm";
 import "./Header.css";
 
-export default function Header({ queryTerm, onSearchChange, onSearchSubmit }) {
+export default function Header() {
   return (
     <nav>
       <div className="logo">
@@ -10,11 +10,7 @@ export default function Header({ queryTerm, onSearchChange, onSearchSubmit }) {
           <img src="/logo.png" alt="logo" />
         </Link>
       </div>
-      <SearchForm
-        queryTerm={queryTerm}
-        onSearchChange={onSearchChange}
-        onSearchSubmit={onSearchSubmit}
-      />
+      <SearchForm />
       <ul className="nav-links">
         <li>
           <NavLink
@@ -29,7 +25,7 @@ export default function Header({ queryTerm, onSearchChange, onSearchSubmit }) {
             className={({ isActive }) => (isActive ? "active" : "")}
             to="/saved-list"
           >
-            Saved List
+            Save List
           </NavLink>
         </li>
         <li>

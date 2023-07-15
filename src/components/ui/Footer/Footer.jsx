@@ -9,7 +9,7 @@ export default function Footer() {
           <img src="/logo.png" alt="logo" />
         </Link>
       </div>
-      <p>&copy; 2023 DigitalKarnjana, LLC.</p>
+      <p className="copy">&copy; 2023 DigitalKarnjana, LLC.</p>
 
       <div className="social">
         <span>

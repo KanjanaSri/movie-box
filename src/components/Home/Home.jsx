@@ -4,6 +4,7 @@ import Loader from "../ui/Loader/Loader";
 import ErrorMessage from "../ui/ErrorMessage/ErrorMessage";
 import { useContext } from "react";
 import { MoviesContext } from "../../context/MoviesContext";
+import "./Home.css";
 
 export default function Home() {
   const { popularMovies, nowPlayingMovies, upcomingMovies, isLoading, error } =
@@ -16,10 +17,18 @@ export default function Home() {
 
       {!isLoading && !error && <HeroSlider movies={popularMovies} />}
       {!isLoading && !error && (
-        <PosterSlider movies={nowPlayingMovies}>Now Playing</PosterSlider>
+        <PosterSlider movies={nowPlayingMovies}>
+          <div>
+            <span class="underline">Now Playing</span>
+          </div>
+        </PosterSlider>
       )}
       {!isLoading && !error && (
-        <PosterSlider movies={upcomingMovies}>Upcoming Movies</PosterSlider>
+        <PosterSlider movies={upcomingMovies}>
+          <div>
+            <span class="underline">Upcoming Movies</span>
+          </div>
+        </PosterSlider>
       )}
     </>
   );

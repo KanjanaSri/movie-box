@@ -1,15 +1,18 @@
 .form-container {
+  height: 30px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-input,
 .search-input:focus {
-  width: 15rem;
+  min-width: 300px;
   background-color: transparent;
   border: none;
-  padding: 5px 20px;
-  height: 25px;
+  padding: 0 20px;
   outline: none;
   font-size: 0.9rem;
   color: var(--text-white);
@@ -19,9 +22,8 @@ input::placeholder {
   color: #bababa;
 }
 
-i.fa-magnifying-glass {
+i.fa-xmark {
   margin-right: 1rem;
   color: #bababa;
   cursor: pointer;
-  font-size: 1rem;
 }
