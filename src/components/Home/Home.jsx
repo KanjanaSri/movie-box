@@ -3,7 +3,7 @@ import PosterSlider from "../PosterSlider/PosterSlider";
 import Loader from "../ui/Loader/Loader";
 import ErrorMessage from "../ui/ErrorMessage/ErrorMessage";
 import { useContext } from "react";
-import { MoviesContext } from "../../context/moviesContext";
+import { MoviesContext } from "../../context/MoviesContext";
 
 export default function Home() {
   const { popularMovies, nowPlayingMovies, upcomingMovies, isLoading, error } =

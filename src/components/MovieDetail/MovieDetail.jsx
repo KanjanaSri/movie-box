@@ -1,11 +1,15 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchMoviesById } from "../../util/helper";
+import { useContext } from "react";
+import { SaveListContext } from "../../context/SaveListContext";
 import Loader from "../ui/Loader/Loader";
 import ErrorMessage from "../ui/ErrorMessage/ErrorMessage";
 import "./MovieDetail.css";
 
 export default function MovieDetail() {
+  const { saveList, handleSaveMovie } = useContext(SaveListContext);
+
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -14,10 +18,10 @@ export default function MovieDetail() {
   const navigate = useNavigate();
   const base_url = "https://image.tmdb.org/t/p/original/";
 
-  let didSaved = true;
-  // savedList?.forEach((movie) => {
-  //   if (movie.id === selectedMovie.id) didSaved = true;
-  // });
+  let didSaved = false;
+  saveList?.forEach((savedMovie) => {
+    if (savedMovie.id === movie?.id) didSaved = true;
+  });
 
   useEffect(() => {
     fetchMoviesById(id, setMovie, setIsLoading, setError);
@@ -53,7 +57,7 @@ export default function MovieDetail() {
               <span>Rating {movie?.vote_average.toFixed(1)}</span>
               <span>|</span>
               <button
-                onClick={() => onSaveMovie(movieById)}
+                onClick={() => handleSaveMovie(movie)}
                 className="save-btn"
               >
                 {didSaved ? (

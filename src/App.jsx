@@ -27,35 +27,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/movie/:id"
-            element={
-              <MovieDetail
-              // onSaveMovie={handleSaveMovie}
-              // savedList={savedList}
-              />
-            }
-          />
-          <Route
-            path="/search/:query"
-            element={
-              <MovieList
-              // movies={queryMovies}
-              // queryIsLoading={queryIsLoading}
-              // queryError={queryError}
-              // showRemove={false}
-              />
-            }
-          />
-          <Route
-            path="/saved-list"
-            element={
-              <SavedList
-              // savedList={savedList}
-              // onRemoveMovie={handleRemoveMovie}
-              />
-            }
-          />
+          <Route path="/movie/:id" element={<MovieDetail />} />
+          <Route path="/search/:query" element={<MovieList />} />
+          <Route path="/saved-list" element={<SavedList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
