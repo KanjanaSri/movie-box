@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+  width: 20vw;
+  margin: 2rem 1.5rem;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.remove {
+  padding: 10px 20px;
+  background-color: #f24c3d;
+  border-radius: 0 30px 0 30px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.remove i.fa-circle-exclamation {
+  margin-right: 5px;
+}

@@ -1,0 +1,22 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #22232a;
+  height: 100px;
+}
+
+.logo img {
+  width: 6rem;
+  margin-left: 3rem;
+}
+
+.social {
+  margin-right: 3rem;
+}
+
+.social i.fa-brands {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
