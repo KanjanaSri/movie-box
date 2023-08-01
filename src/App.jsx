@@ -1,18 +1,17 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 
-const Home = lazy(() => import("./components/Home/Home"));
-const Header = lazy(() => import("./components/Header/Header"));
-const MovieDetail = lazy(() => import("./components/MovieDetail/MovieDetail"));
-const SaveList = lazy(() => import("./components/SaveList/SaveList"));
+const Home = lazy(() => import("./components/Home"));
+const Header = lazy(() => import("./components/Header"));
+const MovieDetail = lazy(() => import("./components/MovieDetail"));
+const SaveList = lazy(() => import("./components/SaveList"));
 
-import Footer from "./components/ui/Footer/Footer";
-import NotFound from "./components/ui/NotFound/NotFound";
-import About from "./components/ui/About/About";
-import Contact from "./components/ui/Contact/Contact";
-import Loader from "./components/ui/Loader/Loader";
-import SearchList from "./components/SearchList/SearchList";
+import Footer from "./components/ui/Footer";
+import NotFound from "./components/ui/NotFound";
+import About from "./components/ui/About";
+import Contact from "./components/ui/Contact";
+import Loader from "./components/ui/Loader";
+import SearchList from "./components/SearchList";
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/search/:query" element={<SearchList />} />
-          <Route path="/saved-list" element={<SaveList />} />
+          <Route path="/save-list" element={<SaveList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./HeroSlider.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
@@ -24,7 +23,6 @@ export default function HeroSlider({ movies }) {
         keyboard={true}
         loop={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper-hero"
       >
         {movies.map((movie) => (
           <SwiperSlide
@@ -34,23 +32,28 @@ export default function HeroSlider({ movies }) {
               backgroundSize: "cover",
             }}
           >
-            <div className="details-wrapper">
-              <div className="movie-info">
-                <div className="text">
-                  <h1>{movie.title}</h1>
-                  <p>
+            <div className="py-10 lg:py-20 px-7 bg-gradient-to-t from-black/100 to-black/70">
+              <div className="sm:w-10/12 md:w-9/12 lg:w-8/12 mx-auto sm:flex gap-10 justify-center items-center flex-row-reverse">
+                <img
+                  src={`${base_url}${movie.poster_path}`}
+                  className="mx-auto rounded-xl w-44 sm:w-52 md:w-60 shadow-2xl"
+                />
+
+                <div className="mx-auto pt-5 text-gray-300 sm:py-10">
+                  <h1 className="text-gray-200 font-semibold sm:text-2xl md:text-4xl">
+                    {movie.title}
+                  </h1>
+                  <p className="text-xs sm:text-sm md:text-lg my-2 sm:my-4">
                     {movie.overview.split(" ").slice(0, 20).join(" ") + "..."}
                   </p>
-                  <span>Year {movie.release_date.split("-").at(0)}</span>
-                  <span>|</span>
-                  <span>Rating {movie.vote_average}</span>
-                  <div className="more">
-                    <Link to={`/movie/${movie.id}`}>More</Link>
+                  <div className="text-xs my-2 flex gap-2 divide-x-2">
+                    <span>Year {movie.release_date.split("-").at(0)}</span>
+                    <span className="px-2">Rating {movie.vote_average}</span>
                   </div>
-                </div>
 
-                <div className="poster">
-                  <img src={`${base_url}${movie.poster_path}`} />
+                  <button className="text-sm border-2 border-[var(--purple)] py-1 px-3 mt-2 rounded-2xl">
+                    <Link to={`/movie/${movie.id}`}>View</Link>
+                  </button>
                 </div>
               </div>
             </div>

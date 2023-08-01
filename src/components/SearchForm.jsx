@@ -1,23 +1,26 @@
 import React, { useContext } from "react";
-import "./SearchForm.css";
-import { SearchContext } from "../../context/SearchContext";
+import { SearchContext } from "../context/SearchContext";
 
 export default function SearchForm() {
   const { queryTerm, handleSearchChange, handleSearchSubmit, handleClear } =
     useContext(SearchContext);
 
   return (
-    <div className="form-container">
+    <div className=" bg-zinc-700 text-zinc-400 px-3 py-0.5 md:py-1 rounded-2xl">
       <form onSubmit={handleSearchSubmit}>
         <input
-          className="search-input"
+          className="text-sm md:text-base bg-transparent placeholder:text-zinc-500 focus:outline-none"
           type="text"
           placeholder="Search..."
+          spellCheck={false}
           value={queryTerm}
           onChange={handleSearchChange}
         ></input>
 
-        <i className="fa-solid fa-xmark" onClick={handleClear}></i>
+        <i
+          className="fa-solid fa-xmark text-zinc-500 cursor-pointer"
+          onClick={handleClear}
+        ></i>
       </form>
     </div>
   );

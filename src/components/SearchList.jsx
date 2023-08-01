@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
-import { SearchContext } from "../../context/SearchContext";
-import MovieCard from "../MovieCard/MovieCard";
-import NotFound from "../ui/NotFound/NotFound";
-import ErrorMessage from "../ui/ErrorMessage/ErrorMessage";
-import "./SearchList.css";
+import React, { useContext, useEffect } from "react";
+import { SearchContext } from "../context/SearchContext";
+import MovieCard from "./MovieCard";
+import NotFound from "./ui/NotFound";
+import ErrorMessage from "./ui/ErrorMessage";
 
 export default function SearchList() {
   const { results, isLoading, error } = useContext(SearchContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main>
@@ -14,7 +17,7 @@ export default function SearchList() {
       {error && <ErrorMessage message={error} />}
 
       {!isLoading && !error && (
-        <div className="cards-container">
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-10 mx-3 sm:mx-5 my-10">
           {results?.map((movie) => (
             <MovieCard movie={movie} key={crypto.randomUUID()} />
           ))}
