@@ -6,12 +6,12 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-[80vh] flex justify-center items-center bg-neutral-800">
+    <div className="min-h-[80vh] flex justify-center items-center bg-gradient-to-tr from-indigo-700 to-purple-800">
       <div className="w-3/4 text-xs sm:text-sm md:text-lg">
-        <h1 className="font-[Roboto] tracking-wider font-bold text-xl md:text-4xl my-3.5 text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-rose-400">
+        <h1 className="font-[Roboto] tracking-wider font-bold text-xl md:text-4xl my-3.5 text-gray-200">
           Discover the World of Movies
         </h1>
-        <p className="leading-relaxed my-5">
+        <p className="leading-relaxed my-5 font-thin text-gray-300">
           Our movie app is your gateway to a vast world of films. Whether you're
           a dedicated cinephile or simply enjoy a good movie night, we have you
           covered. With our app, you can explore an extensive library of movies

@@ -10,7 +10,7 @@ export default function SaveList() {
   }, []);
 
   if (!saveList?.length)
-    return <h1 className="min-h-screen text-center mt-40">List is empty</h1>;
+    return <h1 className="min-h-[70vh] text-center mt-40">List is empty</h1>;
 
   return (
     <div className="min-h-screen flex flex-wrap justify-center gap-5 sm:gap-10 mx-3 sm:mx-5 my-10">
