@@ -11,11 +11,13 @@ export default function About() {
         <h1 className="font-[Roboto] tracking-wider font-bold text-xl md:text-4xl my-3.5 text-gray-200">
           Discover the World of Movies
         </h1>
-        <p className="leading-relaxed my-5 font-thin text-gray-300">
+        <p className="leading-relaxed my-5 font-light text-gray-300">
           Our movie app is your gateway to a vast world of films. Whether you're
           a dedicated cinephile or simply enjoy a good movie night, we have you
           covered. With our app, you can explore an extensive library of movies
           from different genres, eras, and countries, right at your fingertips.
+        </p>
+        <p p className="leading-relaxed my-5 font-light text-gray-300">
           We're passionate about keeping you up to date with the latest in the
           movie industry. Our app features a dedicated section where you can
           find information about upcoming releases, now playing, and popular
