@@ -6,14 +6,13 @@ export default function MovieCard({ movie, onRemoveMovie, showRemove }) {
   const poster_url = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
 
   return (
-    <div className="relative w-28 sm:w-44 md:w-52">
+    <div className="relative w-32 sm:w-44 md:w-52">
       {showRemove && (
         <div
-          className="absolute right-0 text-sm sm:text-base px-3 py-1 bg-red-800 shadow-inner rounded-tr-2xl rounded-bl-2xl"
+          className="absolute right-0 text-sm sm:text-base px-4 py-1 bg-red-800 shadow-inner rounded-tr-2xl rounded-bl-2xl"
           onClick={() => onRemoveMovie(movie.id)}
         >
-          <i className="fa-solid fa-circle-exclamation mr-1" />
-          Remove
+          <i className="fa-solid fa-xmark"></i>
         </div>
       )}
 
